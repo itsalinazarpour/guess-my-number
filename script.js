@@ -9,16 +9,19 @@ var t = setInterval(function () {
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highScore = 0;
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   if (!guess) {
-    document.querySelector(".message").textContent = "⛔ No Number! ";
+    displayMessage("⛔ No Number!");
   }
 
   // win
   else if (guess === secretNumber) {
-    document.querySelector(".message").textContent = "🎉 correct Number! ";
+    displayMessage("🎉 correct Number! ");
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".number").style.padding = "3rem 12rem";
     document.querySelector(".number").textContent = secretNumber;
@@ -32,13 +35,12 @@ document.querySelector(".check").addEventListener("click", function () {
   // lose
   else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent =
-        guess < secretNumber ? "📉 Too Low!" : "📈 Too High!";
+      displayMessage(guess < secretNumber ? "📉 Too Low!" : "📈 Too High!");
       score--;
       document.querySelector(".score").textContent = score;
     } else {
       document.querySelector(".score").textContent = 0;
-      document.querySelector(".message").textContent = "💥 Game over";
+      displayMessage("💥 Game over");
       document.querySelector("body").style.backgroundColor = "red";
       document.querySelector(".guess").disabled = true;
     }
@@ -54,7 +56,7 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = "?";
   document.querySelector(".score").textContent = score;
   document.querySelector("body").style.backgroundColor = "#222";
-  document.querySelector(".message").textContent = "Start guessing...";
+  displayMessage("Start guessing...");
   document.querySelector(".guess").value = "";
   document.querySelector(".guess").disabled = false;
 });

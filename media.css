@@ -7,8 +7,15 @@ h1 {
     line-height: 1.5;
 }
 
+.between {
+    font-size: 1.8rem;
+
+
+}
+
 main {
     flex-direction: column;
+    margin-top: 50px;
 
 }
 
@@ -17,14 +24,15 @@ section.right, section.left {
     height: 160px;
 }
 
-@media (max-width:330px) {
+@media (max-height:660px) {
     html {
         font-size: 37%;
     }
 
     h1 {
-        margin: 10px 0 5px 0;
+        margin: 10px 0 0 0;
         line-height: 1.3;
+        font-size: 20px;
     }
 
     main {
@@ -35,5 +43,33 @@ section.right, section.left {
     section.right, section.left {
         width: 100%;
         height: 130px;
+    }
+
+    section.right {
+        height: auto;
+    }
+
+    .guess {
+        background: none;
+        border: 3px solid #eee;
+        font-family: inherit;
+        color: inherit;
+        font-size: 4rem;
+        padding: 1.5rem;
+        width: 20rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 3rem;
+    }
+
+    .message {
+        margin-bottom: 4rem;
+
+    }
+
+    .between {
+        font-size: 1.7rem;
+
+
     }
 }
