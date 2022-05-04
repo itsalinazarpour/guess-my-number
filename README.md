@@ -33,10 +33,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Ali's online restaurant</h3>
+  <h3 align="center">Guess My Number!</h3>
 
   <p align="center">
-    this is a demo of a restaurant website made by me.
+    This is a cute game to test your guessing skills.
     <br />
     <a href="https://github.com/itsalinazarpour/guess-my-number"><strong>Explore the docs »</strong></a>
     <br />
