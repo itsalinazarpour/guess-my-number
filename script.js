@@ -1,9 +1,11 @@
 "use strict";
 
-var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-var t = setInterval(function () {
-  var ele = document.getElementById("myBlinkingDiv");
-  ele.style.visibility = ele.style.visibility == "hidden" ? "" : "hidden";
+// blinking exclamation mark
+const blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+const blinkingElem = document.querySelector("#blinking");
+const blinkingElemFunc = setInterval(function () {
+  blinkingElem.style.visibility =
+    blinkingElem.style.visibility == "hidden" ? "" : "hidden";
 }, blink_speed);
 
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
