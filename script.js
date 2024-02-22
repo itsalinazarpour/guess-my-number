@@ -1,13 +1,5 @@
 "use strict";
 
-// blinking exclamation mark
-const blink_speed = 1000; // every 1000 == 1 second, adjust to suit
-const blinkingElem = document.querySelector("#blinking");
-const blinkingElemFunc = setInterval(function () {
-  blinkingElem.style.visibility =
-    blinkingElem.style.visibility == "hidden" ? "" : "hidden";
-}, blink_speed);
-
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 let highScore = 0;
@@ -62,3 +54,11 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
   document.querySelector(".guess").disabled = false;
 });
+
+// blinking exclamation mark
+const blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+const blinkingElem = document.querySelector("#blinking");
+const blinkingElemFunc = setInterval(function () {
+  blinkingElem.style.visibility =
+    blinkingElem.style.visibility == "hidden" ? "" : "hidden";
+}, blink_speed);
